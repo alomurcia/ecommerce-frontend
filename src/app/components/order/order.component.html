@@ -1,0 +1,17 @@
+<mat-toolbar>
+    <button mat-button routerLink="/menu">Menu</button>
+  </mat-toolbar>
+  <mat-card>
+    <mat-card-title>Order Management</mat-card-title>
+    <mat-card-content>
+      <button mat-raised-button color="primary" (click)="createOrder()">Add Order</button>
+      <mat-list>
+        <mat-list-item *ngFor="let order of orders">
+          {{ order.customerName }} - {{ order.orderDate | date:'short' }}
+          <button mat-button (click)="updateOrder(order)">Edit</button>
+          <button mat-button (click)="deleteOrder(order.id)">Delete</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  
